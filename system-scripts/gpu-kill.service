@@ -1,0 +1,11 @@
+[Unit]
+Description=Kill NVIDIA GPU for maximum battery life
+After=multi-user.target
+
+[Service]
+Type=oneshot
+# Скрипт сам має затримку (sleep 15), тому тут просто запускаємо його
+ExecStart=/usr/local/bin/gpu-off.sh
+
+[Install]
+WantedBy=multi-user.target
